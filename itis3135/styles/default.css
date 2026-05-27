@@ -1,0 +1,11 @@
+a {
+    color: red;
+}
+
+.company-name {
+    color: green;
+}
+
+.picture {
+    max-height: 300px;
+}
