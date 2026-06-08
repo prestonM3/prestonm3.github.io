@@ -9,3 +9,7 @@ a {
 .picture {
     max-height: 300px;
 }
+
+.subnav {
+    padding-top: 10px;
+}
