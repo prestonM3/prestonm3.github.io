@@ -15,9 +15,34 @@
     <body>
     <div data-include="components/header.html"></div>
 
-        <main>
-            <h2>Survey</h2>
-        </main>
+            <main>
+                <h2>Survey</h2>
+
+                <form id="survey-form">
+
+                    <label for="name">Your Name:</label>
+                    <input id="name" name="name" type="text" required placeholder="Enter your name">
+
+                    <label for="personal">Personal Background:</label>
+                    <textarea id="personal" name="personal" rows="3" placeholder="Tell us about yourself..."></textarea>
+
+                    <label for="professional">Professional Background:</label>
+                    <textarea id="professional" name="professional" rows="3" placeholder="Work experience, projects, etc."></textarea>
+
+                    <label for="academic">Academic Background:</label>
+                    <textarea id="academic" name="academic" rows="3" placeholder="Major, year, concentration..."></textarea>
+
+                    <label for="computer">Primary Computer:</label>
+                    <input id="computer" name="computer" type="text" placeholder="e.g., Apple laptop, macOS">
+
+                    <label for="courses">Courses You're Taking & Why:</label>
+                    <textarea id="courses" name="courses" rows="3" placeholder="List your courses and reasons..."></textarea>
+
+                    <button type="submit">Submit</button>
+
+                </form>
+            </main>
+
         <div data-include="components/footer.html"></div>
         <script src="scripts/HTMLInclude.min.js"></script>
     </body>

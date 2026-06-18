@@ -17,6 +17,57 @@
 
         <main>
             <h2>Inventory</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Condition</th>
+                        <th>Availability</th>
+                        <th>Cozy Rating</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="in-stock">
+                        <td>Miniature Leather Journal</td>
+                        <td>Book</td>
+                        <td>New</td>
+                        <td><span class="status">In Stock</span></td>
+                        <td>
+                            <span class="rate three">
+                                <span></span><span></span><span></span>
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr class="limited">
+                        <td>Tiny Acorn Bookmark</td>
+                        <td>Accessory</td>
+                        <td>Used</td>
+                        <td><span class="status">Limited</span></td>
+                        <td>
+                            <span class="rate two">
+                                <span></span><span></span>
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr class="out">
+                        <td>Pocket‑Sized Poetry Book</td>
+                        <td>Book</td>
+                        <td>Worn</td>
+                        <td><span class="status">Out of Stock</span></td>
+                        <td>
+                            <span class="rate one">
+                                <span></span>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
         </main>
         <div data-include="components/footer.html"></div>
         <script src="scripts/HTMLInclude.min.js"></script>
