@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing & Sketching Hobby Site</title>
+
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+        /* Hide all sections by default, show the targeted one (unchanged behavior) */
+        section {
+            display: none;
+        }
+
+        section:target {
+            display: block;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Reset & Base Variables */
+        :root {
+            --bg-color: #2e2640;       /* deep plum-indigo, not plain white/black */
+            --card-bg: #382e4d;        /* lighter plum panel */
+            --text-main: #f0e6d2;      /* warm parchment, not pure black or white */
+            --text-muted: #b3a3c4;
+            --accent: #e8a33d;         /* mustard gold, not generic link-blue */
+            --accent-hover: #f4bc63;
+            --border-color: #4d4268;
+            --max-width: 760px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 15% 0%, #392f50 0%, var(--bg-color) 55%);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        /* Header & Navigation */
+        header {
+            width: 100%;
+            max-width: var(--max-width);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 24px;
+        }
+
+        nav {
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            background-color: rgba(56, 46, 77, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 14px 26px;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Main Content Area */
+        main {
+            width: 100%;
+            max-width: var(--max-width);
+            flex: 1;
+        }
+
+        /* Functional Section Toggling */
+        section {
+            display: none;
+            background-color: var(--card-bg);
+            padding: 44px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        section:target {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography Inside Sections */
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 14px;
+            color: var(--accent);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: var(--border-color);
+            margin-bottom: 26px;
+        }
+
+        section p {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95rem;
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(232, 163, 61, 0.12);
+            color: var(--accent);
+            border-bottom: 1px solid var(--border-color);
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        td {
+            color: var(--text-main);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        ul li {
+            font-size: 1.02rem;
+            font-style: normal;
+            color: var(--text-muted);
+            padding: 16px 18px;
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            margin-bottom: 12px;
+        }
+
+        /* Media & Figures */
+        figure {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+
+        figcaption {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            max-width: var(--max-width);
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+    </style>
+
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Redirects to the first section on initial load to ensure a seamless default view
+        if (!window.location.hash) {
+            window.location.hash = '#what';
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Drawing & Sketching</h1>
+
+        <nav>
+            <a href="#what">What</a>
+            <a href="#who">Who</a>
+            <a href="#when">When</a>
+            <a href="#where">Where</a>
+            <a href="#how">How</a>
+            <a href="#why">Why</a>
+            <a href="#prompts">AI Prompts</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="what">
+            <h2>What is Drawing & Sketching?</h2>
+            <hr>
+            <p>Drawing is the act of putting lines, shapes, and shadows onto a flat surface to represent objects, people, or ideas. It is a simple form of communication that has been used for a long time. It can range from a quick, rough layout in a notebook to a finished piece done with charcoal or graphite.</p>
+            
+            <p>It requires very little equipment compared to other activities. There is no need for specialized studios, paints, or complex tools. You only need a basic marking tool and a piece of paper to start, making it an easy hobby to pick up.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medium</th>
+                        <th>Typical Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Graphite & Pencils</td>
+                        <td>Fine details, precision line work, and realistic portraits.</td>
+                    </tr>
+                    <tr>
+                        <td>Charcoal</td>
+                        <td>Expressive strokes, deep shadows, and high-contrast rendering.</td>
+                    </tr>
+                    <tr>
+                        <td>Ink / Fineliners</td>
+                        <td>Permanent lines, hatching textures, and clean illustrations.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img src="./images/what_img.png" alt="Woman drawing a face in a room at a table">
+                <figcaption>What drawing may look like for you.</figcaption>
+            </figure>
+        </section>
+
+        <section id="who">
+            <h2>Who is This For?</h2>
+            <hr>
+            <p>The drawing community includes anyone who takes the time to learn the basic fundamentals of their subject matter. There is no specific type of person who draws. People who sketch include students, professional designers, architects, and casual hobbyists who just want to pass the time or unwind.</p>
+            
+            <p>You do not need background knowledge or natural talent to start. Most people begin with messy lines and incorrect proportions. Progress usually comes from practice and looking at tips or feedback from other people online or in local groups.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill Level</th>
+                        <th>Core Focus Area</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Beginner</td>
+                        <td>Mastering hand-eye coordination and basic geometric structural breakdown.</td>
+                    </tr>
+                    <tr>
+                        <td>Intermediate</td>
+                        <td>Understanding directional values, complex lighting, and perspectives.</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced</td>
+                        <td>Developing an individual artistic style and anatomy mastery.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img src="./images/who_img.png" alt="Group of people drawing in a room at a table">
+                <figcaption>Drawing can be for anyone.</figcaption>
+            </figure>
+        </section>
+
+        <section id="when">
+            <h2>When to Draw</h2>
+            <hr>
+            <p>Because the materials are portable, you can draw at almost any time. Some people prefer to sketch early in the morning or late at night when there are fewer distractions. Others use regular downtime during the day, like breaks or commutes, to practice.</p>
+            
+            <p>The timing can also depend on the weather. Spring and summer are typical times for going outside to sketch scenery or buildings. During the winter, most people move indoors to focus on still-life objects, indoor spaces, or technical practice.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Ideal Subject Focus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Spring / Summer</td>
+                        <td>Plein air landscapes, botanical studies, and natural lighting practice.</td>
+                    </tr>
+                    <tr>
+                        <td>Autumn / Winter</td>
+                        <td>Controlled indoor setups, portrait modeling, and technical perspective drills.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img src="images/when_img.png" alt="Various environments of drawing">
+                <figcaption>Drawing can be done almost anytime.</figcaption>
+            </figure>
+        </section>
+
+        <section id="where">
+            <h2>Where to Find Subjects</h2>
+            <hr>
+            <p>You can find things to draw in almost any environment. Places like public parks, backyards, and city streets offer organic shapes and basic structures to look at. Museums and local galleries are also common spots to sit and copy the work of older artists for practice.</p>
+            
+            <p>If you prefer drawing at home, a simple desk with decent lighting is sufficient, using a device to find images. The main goal is to find a quiet space where you can focus on your work without frequent interruptions.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Environment</th>
+                        <th>Key Creative Benefit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Urban Areas</td>
+                        <td>Improves structured perspective and clean architectural sketching.</td>
+                    </tr>
+                    <tr>
+                        <td>Natural Parks</td>
+                        <td>Enhances fluid line work and complex, asymmetric textures.</td>
+                    </tr>
+                    <tr>
+                        <td>Private Desk</td>
+                        <td>Allows for absolute control over lighting and long-form study.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img src="images/where_img.png" alt="Drawing study of a plant">
+                <figcaption>An example of a possible subject. <i>["One subject matter, one place"]</i></figcaption>
+            </figure>
+        </section>
+
+        <section id="how">
+            <h2>How to Get Started</h2>
+            <hr>
+            <p>To start drawing, you only need basic supplies. A standard 2B pencil, a regular eraser, and plain printer paper are enough for practice. The initial focus should be on building basic hand-eye coordination rather than trying to make a perfect image right away.</p>
+            
+            <p>A common method is to break down complex objects into simple geometric shapes like circles, rectangles, and squares. Once you map out these basic forms, it becomes easier to add details and shading. Regular practice, even for short periods, helps build the skill over time.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pencil Grade</th>
+                        <th>Core Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2H - H</td>
+                        <td>Hard graphite for faint, light layout lines and structural setups.</td>
+                    </tr>
+                    <tr>
+                        <td>HB - 2B</td>
+                        <td>Standard medium lead used for balanced lines and midtone values.</td>
+                    </tr>
+                    <tr>
+                        <td>4B - 6B</td>
+                        <td>Soft, rich dark graphite optimal for deep values and heavy shading.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img src="images/how_img.png" alt="Man drawing near a river sitting on a rock">
+                <figcaption>Practicing is essential. </figcaption>
+            </figure>
+        </section>
+
+        <section id="why">
+            <h2>Why We Draw</h2>
+            <hr>
+            <p>Drawing forces you to look closely at objects and analyze how they are put together. When you sketch an item, you notice details like how light hits the surface, where the shadows fall, and the actual proportions of the object. It changes how you observe everyday things.</p>
+            
+            <p>Many people also use drawing as a way to relax and focus on a single task. It requires enough concentration to keep your mind occupied, which can help reduce daily stress. Completing a sketch provides a simple sense of accomplishment from creating something manual.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Benefit Category</th>
+                        <th>Practical Everyday Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cognitive</td>
+                        <td>Heightens visual observational skills and sharpens spatial memory.</td>
+                    </tr>
+                    <tr>
+                        <td>Therapeutic</td>
+                        <td>Lowers stress levels by demanding high mindfulness and focused concentration.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img src="images/why_img.png" alt="Man drawing at a table near windows">
+                <figcaption>Find purpose in drawing. </figcaption>
+            </figure>
+        </section>
+
+        <section id="prompts">
+            <h2>AI Prompts</h2>
+            <hr>
+            <p>
+                AI was used for image generation, website styling, table creation (acts as cards), and JS nav logic.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>AI Utility</th>
+                        <th>Project Integration Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gemini</td>
+                        <td>Generated natural assets without overlay watermarks or labels.</td>
+                    </tr>
+                    <tr>
+                        <td>Gemini/Claude</td>
+                        <td>Structured an organized, single-page UI utilizing premium styling techniques.</td>
+                    </tr>
+                    <tr>
+                        <td>Gemini</td>
+                        <td>Provided usage on how the tables would work on the site naturally.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    "Read the following description and generate an image based on it. Make the image natural, and do not caption it."
+                </li>
+
+                <li>
+                    "Act as a Senior UI/UX Front-End Developer. Write a clean, modern, Apple-inspired CSS stylesheet for a minimal single-page website. Use a premium system font stack, high-end white-space scales, a soft gray canvas background (#f5f5f7), crisp dark gray text typography, and rounded image borders (12px). Make sure the navigation is styled as a sleek, centered pill-shaped island using backdrop blur. Seamlessly preserve the target-switching logic (section:target and body:not(:has(section:target))) while introducing a smooth, clean fade-in animation whenever a new section target is active. Keep all CSS properties organized, variable-driven, and highly readable."
+                </li>
+
+                <li>
+                    "I do like the clean look of my site, but given the criteria its not applicable, please generate new styling thats clean like this one, but follows the crtieria."
+                </li>
+
+                <li>
+                    "Will changing the css html to a javascript version of what im trying to acheive, fix the issue entirely? if so i would like to do so.""
+                </li>
+                <li>
+                    "for every section we also need to include the use of tables, because my assignment asks for three components atleast, a figure (we have) a paragraph (we have) and some other component which i choose to be a table, how would this fit naturally on the site?"
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Designed by <a href="../prestonfirm.co"><b>Preston Firm ©2026</b></a></p>
+        <a href="https://validator.w3.org/check?uri=https://webpages.charlotte.edu/pmoore54/itis3135/hobby">
+            HTML Validation
+        </a> ✏️
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://webpages.charlotte.edu/pmoore54/itis3135/hobby">
+            CSS Validation
+        </a> ✏️
+        <a href="https://wave.webaim.org/report#/https://webpages.charlotte.edu/pmoore54/itis3135/hobby">
+            Accessibility Validation
+        </a>
+    </footer>
+
+</body>
+</html>
