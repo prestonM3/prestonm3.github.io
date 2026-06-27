@@ -1,0 +1,181 @@
+<!DOCTYPE HTML> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>ITIS3135 | Preston Moore | Lazy Lizard | Pictures</title>
+
+        <link rel="stylesheet" href="styles/default.css">
+
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+        <style>
+            main img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div data-include="components/header.html"></div>
+
+        <main>
+            <h2>Everything Pictures</h2>
+            <p>The purpose of this assignment is to give a clear understanding of how digital images actually work so that we can make informed, intentional choices when preparing visuals for the web. Were asked to think about what pixel dimensions represent, why a 3000×5000 image behaves differently from a downscaled one, and how changing an image’s dimensions affects both clarity and storage size. It also introduces common web formats such as JPG, PNG, and GIF, explaining what makes each format useful in different situations. A major goal is to address problems with proportionality for example, stretching a portrait photo into a landscape shape or squishing an image into a square—so students learn to maintain proper aspect ratios and produce images that look clean, accurate, and professional on screen.</p>
+
+            <section>
+                <h3>Demonstrating Image Manipulation with a Pexels Photo</h3>
+                <p>I selected this image by Natalia Pawlucka because it fulfilled the requirement of the dimensions. The original image is a JPG format with dimensions of 3873x5894 pixels, weighing in at 2.26 MB.</p>
+
+                <article>
+                    <h4>Original Image</h4>
+                    <p>Click to open the image in its original JPG format: 
+                        <a href="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels.jpg" target="_blank">Original Image</a> | 
+                        <a href="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels.gif" target="_blank">Original Image as a GIF</a> | 
+                        <a href="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-grayscale.jpg" target="_blank">Grayscale</a> | 
+                        <a href="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-bw.jpg" target="_blank">Black and White</a>
+                    </p>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-large.jpg" style="max-width: 400px;" alt="Original Pexels Photo">
+                        <figcaption>The original unedited photo from Pexels displayed at a contained scale.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Downsizing Images with CSS</h4>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-large.jpg" style="width: 20%;" alt="CSS Downsized Image">
+                        <figcaption>The original large image downscaled to 20% of its native width using inline CSS layout constraints.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Proper Reduction of Image with Editor</h4>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-600x400.jpg" style="width: 100%; max-width: 600px;" alt="Properly Resized Image">
+                        <figcaption>An image properly resized inside an editor to a web-optimized 600px width, retaining crisp rendering without wasting bandwidth.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Improper image proportions with CSS</h4>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-600x400.jpg" style="width: 600px !important; height: 268px !important;" alt="Squeezed Height 33%">
+                        <figcaption>Height reduced by 33% using CSS while locking native width, causing a squished effect.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-600x400.jpg" style="width: 600px !important; height: 180px !important;" alt="Squeezed Height Further">
+                        <figcaption>Height reduced by an additional 33% relative to the prior distortion, resulting in severe compression.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-600x400.jpg" style="width: 402px !important; height: 400px !important;" alt="Squeezed Width 33%">
+                        <figcaption>Width reduced by 33% using CSS while locking native height, resulting in a horizontally squished distortion.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-600x400.jpg" style="width: 269px !important; height: 400px !important;" alt="Squeezed Width Further">
+                        <figcaption>Width reduced by an additional 33% relative to the prior distortion, compounding the horizontal skew.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Improper Enlarging with CSS</h4>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-600x400.jpg" style="width: 600px !important;" alt="Standard Resized Control">
+                        <figcaption>The baseline editor-reduced image set to a standard 600px display width.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/pexels-natalia-pawlucka-2160546673-37924840@natalia-pawlucka_pexels-25percent.jpg" style="width: 600px !important;" alt="Forced Enlargement of Tiny File">
+                        <figcaption>An asset explicitly downsized to 25% file dimensions in an editor, then stretched back to 600px via CSS, highlighting pixelation flaws.</figcaption>
+                    </figure>
+                </article>
+            </section>
+
+            <hr>
+
+            <section>
+                <h3>Demonstrating Image Manipulation with Personal Geometry Photo</h3>
+                <p>I captured this image to showcase structural geometry. It features a circular container. The original image is a JPG file format with a pixel resolution of 3024x4032 and an architectural footprint file size of 1.53 MB.</p>
+
+                <article>
+                    <h4>Original Image</h4>
+                    <p>Click to open the image in its original JPG format: 
+                        <a href="images/holding_container@pmoore54.JPG" target="_blank">Original Image</a> | 
+                        <a href="images/holding_container@pmoore54.gif" target="_blank">Original Image as a GIF</a> | 
+                        <a href="images/holding_container@pmoore54-grayscale.jpg" target="_blank">Grayscale</a> | 
+                        <a href="images/holding_container@pmoore54-bw.jpg" target="_blank">Black and White</a>
+                    </p>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-large.JPG" style="max-width: 400px;" alt="Original Geometry Photo">
+                        <figcaption>The original geometric capture contained visually within the viewport layout limits.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Downsizing Images with CSS</h4>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-large.JPG" style="width: 20%;" alt="CSS Downsized Geometry Image">
+                        <figcaption>The primary geometry capture constrained dynamically to 20% width matching initial relative structural proportions.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Proper Reduction of Image with Editor</h4>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-600x400.jpg" style="width: 100%; max-width: 600px;" alt="Properly Resized Geometry Image">
+                        <figcaption>A balanced, production-ready revision scaled directly via image-editor compression routines to 600px width.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Improper image proportions with CSS</h4>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-600x400.jpg" style="width: 600px !important; height: 268px !important;" alt="Geometry Squeezed Height 33%">
+                        <figcaption>Vertical layout parameters diminished manually by 33% via CSS styling constraints.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-600x400.jpg" style="width: 600px !important; height: 180px !important;" alt="Geometry Squeezed Height Further">
+                        <figcaption>Compounded vertical distortion lowering structural profile metrics by an added 33% bracket tier.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-600x400.jpg" style="width: 402px !important; height: 400px !important;" alt="Geometry Squeezed Width 33%">
+                        <figcaption>Horizontal axis variables forced inwards by a 33% metric reduction, squeezing perspective lines.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-600x400.jpg" style="width: 269px !important; height: 400px !important;" alt="Geometry Squeezed Width Further">
+                        <figcaption>Severe lateral compression applied iteratively to the graphic elements via layout adjustments.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Improper Enlarging with CSS</h4>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-600x400.jpg" style="width: 600px !important;" alt="Standard Resized Geometry Control">
+                        <figcaption>The optimized 600px geometry benchmark displaying sharp crisp contours.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/holding_container@pmoore54-25percent.jpg" style="width: 600px !important;" alt="Forced Enlargement of Tiny Geometry File">
+                        <figcaption>A highly compressed 25% resolution placeholder asset artificially inflated back to 600px, demonstrating heavy visual distortion.</figcaption>
+                    </figure>
+                </article>
+            </section>
+            <hr>
+
+            <section style="text-align: center;">
+                <h3>AI Usage</h3>
+                <p>AI was utilized in this assignment for page drafting and the math.</p>
+                <ul style="display: inline-block; text-align: left; max-width: 600px;">
+                    <li><strong>Framework Construction:</strong> Drafted the structural HTML tag skeleton and organized the multi-step section layouts required by the prompt guidelines.</li>
+                    <li><strong>Proportional Calculations:</strong> Provided the direct dimensions and percentage math needed to cleanly showcase aspect ratio distortions. (Basically the percentage -> pixel conversion as well for editing)</li>
+                </ul>
+            </section>
+            
+        </main>
+
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+    </body>
+</html>
