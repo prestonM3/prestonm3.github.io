@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>ITIS3135 | Preston Moore | Lazy Lizard | Introduction Form</title>
+
+        <link rel="stylesheet" href="styles/default.css">
+
+        <!-- Accumulus Script -->
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div data-include="components/header.html"></div>
+
+        <main>
+            <h2>Introduction Form</h2>
+
+            <div id="intro-result" style="display:none;"></div>
+
+            <div id="form-container">
+                <h3>Please submit the form below.</h3>
+
+                <form id="intro-form">
+
+                    <!-- ── Personal Info ── -->
+                    <fieldset>
+                        <legend>Name</legend>
+
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName"
+                               value="Preston" placeholder="First name" required>
+
+                        <label for="middleName">Middle Name / Initial (optional)</label>
+                        <input type="text" id="middleName" name="middleName"
+                               value="" placeholder="Middle name or initial">
+
+                        <label for="nickname">Nickname / Preferred Name (optional)</label>
+                        <input type="text" id="nickname" name="nickname"
+                               value="" placeholder="Nickname or preferred name">
+
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName"
+                               value="Moore" placeholder="Last name" required>
+                    </fieldset>
+
+                    <!-- ── Acknowledgment ── -->
+                    <fieldset>
+                        <legend>Acknowledgment</legend>
+
+                        <label for="acknowledgment">Acknowledgment Statement *</label>
+                        <textarea id="acknowledgment" name="acknowledgment" rows="3"
+                                  placeholder="e.g. I acknowledge that I completed this work honestly..." required>FILL IN YOUR ACKNOWLEDGMENT STATEMENT</textarea>
+
+                        <label for="ackDate">Acknowledgment Date *</label>
+                        <input type="text" id="ackDate" name="ackDate" value="" placeholder="YYYY-MM-DD" required>
+                    </fieldset>
+
+                    <!-- ── Mascot ── -->
+                    <fieldset>
+                        <legend>Mascot</legend>
+
+                        <label for="mascotAdj">Mascot Adjective *</label>
+                        <input type="text" id="mascotAdj" name="mascotAdj"
+                               value="Lazy" placeholder="e.g. Lazy, Passive, Speedy" required>
+
+                        <label for="mascotAnimal">Mascot Animal *</label>
+                        <input type="text" id="mascotAnimal" name="mascotAnimal"
+                               value="Lizard" placeholder="e.g. Lizard, Mouse, Bear" required>
+
+                        <label for="divider">Divider Character *</label>
+                        <input type="text" id="divider" name="divider"
+                               value="|" placeholder="e.g. |, ~, ♥, ●" required>
+                    </fieldset>
+
+                    <!-- ── Picture ── -->
+                    <fieldset>
+                        <legend>Picture</legend>
+
+                        <label for="picture">Upload Photo (Blank defaults to my Image)</label>
+                        <input type="file" id="picture" name="picture" accept="image/*">
+
+                        <label for="pictureCaption">Picture Caption *</label>
+                        <input type="text" id="pictureCaption" name="pictureCaption"
+                               value="Photo before going to class" placeholder="Caption for your photo" required>
+                    </fieldset>
+
+                    <!-- ── Personal Statement ── -->
+                    <fieldset>
+                        <legend>Personal Statement</legend>
+
+                        <label for="personalStatement">Personal Statement *</label>
+                        <textarea id="personalStatement" name="personalStatement" rows="4"
+                                  placeholder="Write a short personal statement about yourself..." required>FILL IN YOUR PERSONAL STATEMENT</textarea>
+                    </fieldset>
+
+                    <!-- ── Main Bullets (7) ── -->
+                    <fieldset>
+                        <legend>Main Bullets</legend>
+
+                        <div class="bullet-group">
+                            <label for="bulletLabel1">Bullet 1 Label *</label>
+                            <input type="text" id="bulletLabel1" name="bulletLabel1"
+                                   value="Personal Background" required>
+                            <label for="bulletContent1">Bullet 1 Content *</label>
+                            <textarea id="bulletContent1" name="bulletContent1" rows="2"
+                                      placeholder="Your personal background..." required>I'm from North Carolina, I love drawing, reading and playing games.</textarea>
+                        </div>
+
+                        <div class="bullet-group">
+                            <label for="bulletLabel2">Bullet 2 Label *</label>
+                            <input type="text" id="bulletLabel2" name="bulletLabel2"
+                                   value="Professional Background" required>
+                            <label for="bulletContent2">Bullet 2 Content *</label>
+                            <textarea id="bulletContent2" name="bulletContent2" rows="2"
+                                      placeholder="Your professional background..." required>No workforce experience, I spend a lot of time working on complex personal projects.</textarea>
+                        </div>
+
+                        <div class="bullet-group">
+                            <label for="bulletLabel3">Bullet 3 Label *</label>
+                            <input type="text" id="bulletLabel3" name="bulletLabel3"
+                                   value="Academic Background" required>
+                            <label for="bulletContent3">Bullet 3 Content *</label>
+                            <textarea id="bulletContent3" name="bulletContent3" rows="2"
+                                      placeholder="Your academic background..." required>Upcoming senior, concentration in software engineering and minor in mathematics.</textarea>
+                        </div>
+
+                        <div class="bullet-group">
+                            <label for="bulletLabel4">Bullet 4 Label *</label>
+                            <input type="text" id="bulletLabel4" name="bulletLabel4"
+                                   value="Primary Computer" required>
+                            <label for="bulletContent4">Bullet 4 Content *</label>
+                            <textarea id="bulletContent4" name="bulletContent4" rows="2"
+                                      placeholder="Your primary computer..." required>Apple, macos, laptop, my room</textarea>
+                        </div>
+
+                        <div class="bullet-group">
+                            <label for="bulletLabel5">Bullet 5 Label *</label>
+                            <input type="text" id="bulletLabel5" name="bulletLabel5"
+                                   value="" placeholder="Label for bullet 5">
+                            <label for="bulletContent5">Bullet 5 Content *</label>
+                            <textarea id="bulletContent5" name="bulletContent5" rows="2"
+                                      placeholder="Content for bullet 5..." required></textarea>
+                        </div>
+
+                        <div class="bullet-group">
+                            <label for="bulletLabel6">Bullet 6 Label *</label>
+                            <input type="text" id="bulletLabel6" name="bulletLabel6"
+                                   value="" placeholder="Label for bullet 6">
+                            <label for="bulletContent6">Bullet 6 Content *</label>
+                            <textarea id="bulletContent6" name="bulletContent6" rows="2"
+                                      placeholder="Content for bullet 6..." required></textarea>
+                        </div>
+
+                        <div class="bullet-group">
+                            <label for="bulletLabel7">Bullet 7 Label *</label>
+                            <input type="text" id="bulletLabel7" name="bulletLabel7"
+                                   value="" placeholder="Label for bullet 7">
+                            <label for="bulletContent7">Bullet 7 Content *</label>
+                            <textarea id="bulletContent7" name="bulletContent7" rows="2"
+                                      placeholder="Content for bullet 7..." required></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- ── Courses ── -->
+                    <fieldset>
+                        <legend>Courses I'm Taking, &amp; Why</legend>
+
+                        <div id="courses-container"></div>
+
+                        <button type="button" id="add-course-btn">+ Add Course</button>
+                    </fieldset>
+
+                    <!-- ── Quote ── -->
+                    <fieldset>
+                        <legend>Quote</legend>
+
+                        <label for="quote">Quote *</label>
+                        <textarea id="quote" name="quote" rows="3"
+                                  placeholder="A quote you like..." required>FILL IN YOUR QUOTE</textarea>
+
+                        <label for="quoteAuthor">Quote Author *</label>
+                        <input type="text" id="quoteAuthor" name="quoteAuthor"
+                               value="" placeholder="Author of the quote" required>
+                    </fieldset>
+
+                    <!-- ── Optional Fields ── -->
+                    <fieldset>
+                        <legend>Optional</legend>
+
+                        <label for="funnyThing">Funny Thing (optional)</label>
+                        <input type="text" id="funnyThing" name="funnyThing"
+                               value="" placeholder="Something funny about you">
+
+                        <label for="shareInfo">Something I Would Like to Share (optional)</label>
+                        <textarea id="shareInfo" name="shareInfo" rows="3"
+                                  placeholder="Something you'd like to share..."></textarea>
+                    </fieldset>
+
+                    <!-- ── Links ── -->
+                    <fieldset>
+                        <legend>Links</legend>
+
+                        <div class="link-group">
+                            <label for="linkLabel1">Link 1 Label *</label>
+                            <input type="text" id="linkLabel1" name="linkLabel1"
+                                   value="Webpage" placeholder="Link label" required>
+                            <label for="linkUrl1">Link 1 URL *</label>
+                            <input type="url" id="linkUrl1" name="linkUrl1"
+                                   value="https://webpages.charlotte.edu/pmoore54"
+                                   placeholder="https://..." required>
+                        </div>
+
+                        <div class="link-group">
+                            <label for="linkLabel2">Link 2 Label *</label>
+                            <input type="text" id="linkLabel2" name="linkLabel2"
+                                   value="Github" placeholder="Link label" required>
+                            <label for="linkUrl2">Link 2 URL *</label>
+                            <input type="url" id="linkUrl2" name="linkUrl2"
+                                   value="https://github.com/prestonM3"
+                                   placeholder="https://..." required>
+                        </div>
+
+                        <div class="link-group">
+                            <label for="linkLabel3">Link 3 Label *</label>
+                            <input type="text" id="linkLabel3" name="linkLabel3"
+                                   value="Github Page" placeholder="Link label" required>
+                            <label for="linkUrl3">Link 3 URL *</label>
+                            <input type="url" id="linkUrl3" name="linkUrl3"
+                                   value="https://prestonm3.github.io/"
+                                   placeholder="https://..." required>
+                        </div>
+
+                        <div class="link-group">
+                            <label for="linkLabel4">Link 4 Label *</label>
+                            <input type="text" id="linkLabel4" name="linkLabel4"
+                                   value="LinkedIn" placeholder="Link label" required>
+                            <label for="linkUrl4">Link 4 URL *</label>
+                            <input type="url" id="linkUrl4" name="linkUrl4"
+                                   value="https://www.linkedin.com/in/preston-moore-593870388/"
+                                   placeholder="https://..." required>
+                        </div>
+
+                        <div class="link-group">
+                            <label for="linkLabel5">Link 5 Label *</label>
+                            <input type="text" id="linkLabel5" name="linkLabel5"
+                                   value="freeCodeCamp" placeholder="Link label" required>
+                            <label for="linkUrl5">Link 5 URL *</label>
+                            <input type="url" id="linkUrl5" name="linkUrl5"
+                                   value="https://www.freecodecamp.org/prestonm3"
+                                   placeholder="https://..." required>
+                        </div>
+                    </fieldset>
+
+                    <!-- ── Buttons ── -->
+                    <div class="form-buttons">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                        <button type="button" id="clear-btn">Clear</button>
+                    </div>
+
+                </form>
+            </div>
+            <p>
+                AI helped with the Javascript, skeleton, and formatting of the page. 
+            </p>
+            <p>
+                This assignment was complex due to the Javascript required to do as the assignment says. 
+            </p>
+        </main>
+
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+        <script src="scripts/introduction.js"></script>
+    </body>
+</html>
